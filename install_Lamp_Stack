@@ -1,0 +1,52 @@
+---
+- host = all
+  become = True
+  task:
+    - name: install Lamp Slack on Ubuntu
+      apt:
+      name:
+        - autoconf
+        - gcc
+        - libc6
+        - make
+        - wget
+        - unzip
+        - apache2
+        - apache2-utils
+        - php
+        - libgd-dev
+        - libmcrypt-dev
+        - bc
+        - gawk
+        - dc
+        - build-essential
+        - snmp
+        - libnet-snmp-perl
+        - gettext
+     state: latest
+   when: ansible_distribution == "Ubuntu"
+
+ - name: install prometheus on CentOS
+      yum:
+      name:
+        - autoconf
+        - gcc
+        - libc6
+        - make
+        - wget
+        - unzip
+        - apache2
+        - apache2-utils
+        - php
+        - libgd-dev
+        - libmcrypt-dev
+        - bc
+        - gawk
+        - dc
+        - build-essential
+        - snmp
+        - libnet-snmp-perl
+        - gettext
+     state: latest
+   when: ansible_distribution == "CentOS"
+
